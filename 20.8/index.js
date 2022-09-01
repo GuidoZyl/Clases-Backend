@@ -87,7 +87,15 @@ document.addEventListener("DOMContentLoaded", () => {
     mostrarAlumno(alumnos[1]);
 
     //Ejercicio 4
-
-    let alumnosUpper = alumnos.map((element) => capitalizar(element.nombre));
-    console.log(alumnosUpper)
+    let alumnosTot
+    let alumnosUpper = [6];
+    console.log(typeof(alumnos.nombre))
+    console.log(typeof(alumnos.dni))
+    alumnosUpper[0] = alumnos.map((element) => capitalizar(element.nombre));
+    alumnosUpper[1] = alumnos.map((element) => capitalizar(element.apellido));
+    alumnosUpper[2] = alumnos.dni.filter(() => true);
+    alumnosUpper[3] = alumnos.anio;
+    alumnosUpper[4] = alumnos.curso;
+    alumnosUpper[5] = alumnos.nota;
+    console.log(alumnosUpper);
 })
