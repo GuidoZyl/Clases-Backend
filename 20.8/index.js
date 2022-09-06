@@ -68,13 +68,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     ];
 
-    //Ejercicio 2
+    // Ejercicio 2
 
     const capitalizar = (text) => {
         return text.charAt(0).toUpperCase() + text.slice(1);
     }
 
-    //Ejercicio 3
+    // Ejercicio 3
 
     const mostrarAlumno = (alumno) => {
         let dni = alumno.dni.toString()
@@ -86,16 +86,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
     mostrarAlumno(alumnos[1]);
 
-    //Ejercicio 4
-    let alumnosTot
-    let alumnosUpper = [6];
-    console.log(typeof(alumnos.nombre))
-    console.log(typeof(alumnos.dni))
-    alumnosUpper[0] = alumnos.map((element) => capitalizar(element.nombre));
-    alumnosUpper[1] = alumnos.map((element) => capitalizar(element.apellido));
-    alumnosUpper[2] = alumnos.dni.filter(() => true);
-    alumnosUpper[3] = alumnos.anio;
-    alumnosUpper[4] = alumnos.curso;
-    alumnosUpper[5] = alumnos.nota;
-    console.log(alumnosUpper);
-})
+    // Ejercicio 4
+    alumnos.map((alumno) => {
+        alumno.nombre = capitalizar(alumno.nombre);
+        alumno.apellido = capitalizar(alumno.apellido);
+    });
+
+    // Ejercicio 5
+    alumnos.map((alumno) => {
+        mostrarAlumno(alumno);
+    });
+
+    // Ejercicio 6
+    let aprobados = alumnos.filter((alumno) => {
+        return alumno.nota >= 6;
+    });
+    aprobados.map((alumno) => {
+        mostrarAlumno(alumno);
+    });
+
+    // Ejercicio 7
+    let deCuarto = alumnos.filter((alumno) => {
+        return alumno.anio === 4;
+    });
+    deCuarto.map((alumno) => {
+        mostrarAlumno(alumno);
+    });
+
+    // Ejercicio 8
+    let delB = alumnos.filter((alumno) => {
+        return alumno.curso === "B";
+    });
+    delB.map((alumno) => {
+        mostrarAlumno(alumno);
+    });
+});
